@@ -1,3 +1,12 @@
+## About this repository
+このリポジトリはfutamiが作成したGAS(google apps script)を管理しています。
+
+```
+test(repo)
+| - kpi_manage - kpiをデイリーでslackに投稿してくれる(下記参照)
+| - close_issue - githubでcloseしたissueをslackに投稿してくれる
+```
+
 ## English
 ### Manage KPI on Slack
 ![Imgur](https://i.imgur.com/ARkx8Rg.png)
