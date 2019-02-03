@@ -31,8 +31,8 @@ function timesFutami() {
   var row_last_num = lastRow.filter(String).length;
   var b0 = sheet.getRange(row_last_num,2).getValue();
   var b1 = sheet.getRange(row_last_num,3).getValue();
-  var b2 = sheet.getRange(row_last_num,4).getValue();
-  var b3 = sheet.getRange(row_last_num,5).getValue();
+  var b3 = sheet.getRange(row_last_num,4).getValue();
+  var b10 = sheet.getRange(row_last_num,5).getValue();
 
 
   var date = Utilities.formatDate(new Date(),"JST","yyyy/MM/dd");
@@ -60,19 +60,19 @@ function timesFutami() {
   });
   var sumb1 = sum(strToInt1);
 
-  var b2row = sheet.getRange("D3:D").getValues();
-  var strToInt2 = b2row.map(function (element) {
-    return Number(element);
-  });
-  var sumb2 = sum(strToInt2);
-
-  var b3row = sheet.getRange("E3:E").getValues();
+  var b3row = sheet.getRange("D3:D").getValues();
   var strToInt3 = b3row.map(function (element) {
     return Number(element);
   });
   var sumb3 = sum(strToInt3);
 
+  var b10row = sheet.getRange("E3:E").getValues();
+  var strToInt10 = b10row.map(function (element) {
+    return Number(element);
+  });
+  var sumb10 = sum(strToInt10);
+
   // Slackへ送る
-  postMessage(date + "まで二見がcloseしたissue情報" + "\n" + "```" + "\n" + "今月のB0の個数:" + b0 + "\n" + "今月のB1の個数：" + b1 + "\n" + "今月のB2の個数：" + b2 + "\n" + "今月のB3の個数：" + b3 + "\n" + "```");
-  postMessage("```" + "\n" + "closeしたB0累計:" + sumb0 + "\n" + "closeしたB1累計：" + sumb1 + "\n" + "closeしたB2累計：" + sumb2 + "\n" + "closeしたB3累計：" + sumb3 + "\n" + "```");
+  postMessage(date + "までfutamiがiOS関連でcloseしたissue情報" + "\n" + "```" + "\n" + "今月のB0の個数:" + b0 + "\n" + "今月のB1の個数：" + b1 + "\n" + "今月のB3の個数：" + b3 + "\n" + "今月のB10の個数：" + b10 + "\n" + "```");
+  postMessage("```" + "\n" + "closeしたB0累計:" + sumb0 + "\n" + "closeしたB1累計：" + sumb1 + "\n" + "closeしたB3累計：" + sumb3 + "\n" + "closeしたB10累計：" + sumb10 + "\n" + "```");
 }
